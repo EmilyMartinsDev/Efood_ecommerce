@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { HeaderContainer, HeaderTitle } from '../../components/Header/styles'
-
+import fundo from '../../images/fundo_perfil.png'
 export const FundoContainer = styled.div`
   ${HeaderContainer} {
     max-height: 160px;
@@ -13,6 +13,7 @@ export const Banner = styled.div`
   height: 184px;
   width: 100%;
   background-size: cover;
+  background-image: url(${fundo});
   background-repeat: no-repeat;
   position: relative;
   &::before {

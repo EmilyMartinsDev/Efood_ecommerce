@@ -1,7 +1,7 @@
 import Header from '../../components/Header'
 import Produto from '../../models/Produto'
 import pizza from '../../images/pizza.png'
-import fundo from '../../images/fundo_perfil.png'
+
 import ListaProduto from '../../containers/ListaProduto/index.'
 import Footer from '../../components/Footer'
 import { FundoContainer, Banner } from './styles'
@@ -56,7 +56,7 @@ const Perfil = () => {
     <>
       <FundoContainer>
         <Header />
-        <Banner style={{ backgroundImage: `url(${fundo})` }}></Banner>
+        <Banner style={{}}></Banner>
       </FundoContainer>
       <ListaProduto produtos={produtos} />
       <Footer />
