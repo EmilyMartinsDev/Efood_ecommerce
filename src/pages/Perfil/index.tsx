@@ -1,8 +1,10 @@
 import Header from '../../components/Header'
 import Produto from '../../models/Produto'
 import pizza from '../../images/pizza.png'
+import fundo from '../../images/fundo_perfil.png'
 import ListaProduto from '../../containers/ListaProduto/index.'
 import Footer from '../../components/Footer'
+import { FundoContainer, Banner } from './styles'
 const produtos: Produto[] = [
   {
     id: 1,
@@ -52,7 +54,10 @@ const produtos: Produto[] = [
 const Perfil = () => {
   return (
     <>
-      <Header />
+      <FundoContainer>
+        <Header />
+        <Banner style={{ backgroundImage: `url(${fundo})` }}></Banner>
+      </FundoContainer>
       <ListaProduto produtos={produtos} />
       <Footer />
     </>

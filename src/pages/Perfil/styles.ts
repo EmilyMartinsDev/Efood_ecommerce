@@ -1,0 +1,27 @@
+import styled from 'styled-components'
+import { HeaderContainer, HeaderTitle } from '../../components/Header/styles'
+
+export const FundoContainer = styled.div`
+  ${HeaderContainer} {
+    max-height: 160px;
+    ${HeaderTitle} {
+      margin-top: 2rem;
+    }
+  }
+`
+export const Banner = styled.div`
+  height: 184px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  &::before {
+    content: "";
+    background-color: #000;
+    position: absolute;
+    opacity: 0.5;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+`
