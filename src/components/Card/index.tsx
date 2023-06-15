@@ -14,19 +14,21 @@ type Props = {
   name: string
   banner: string
   description: string
-  rating: number
-  infos: string[]
+  rating?: number
+  infos?: string[]
 }
 
 const Card = ({ name, banner, description, rating, infos, id }: Props) => {
   return (
     <CardContainer>
       <img src={banner} alt={name} />
-      <Image>
-        {infos.map((i) => (
-          <Tag key={id}>{i}</Tag>
-        ))}
-      </Image>
+      {infos && (
+        <Image>
+          {infos.map((i) => (
+            <Tag key={id}>{i}</Tag>
+          ))}
+        </Image>
+      )}
       <CardContent>
         <div>
           <Title color="rosa" fontSize={18}>

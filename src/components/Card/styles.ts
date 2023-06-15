@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { cores } from '../../styles'
 import { Texto } from '../Text/styles'
 import { Link } from 'react-router-dom'
+
 export const CardContainer = styled.div`
   position: relative;
   ${Texto} {
