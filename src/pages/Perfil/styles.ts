@@ -1,12 +1,9 @@
 import styled from 'styled-components'
-import { HeaderContainer, HeaderTitle } from '../../components/Header/styles'
+import { HeaderContainer } from '../../components/Header/styles'
 import fundo from '../../images/fundo_perfil.png'
 export const FundoContainer = styled.div`
   ${HeaderContainer} {
-    max-height: 160px;
-    ${HeaderTitle} {
-      margin-top: 2rem;
-    }
+    padding: 2rem;
   }
 `
 export const Banner = styled.div`

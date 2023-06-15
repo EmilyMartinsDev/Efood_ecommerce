@@ -1,10 +1,11 @@
-import Header from '../../components/Header'
 import Produto from '../../models/Produto'
 import pizza from '../../images/pizza.png'
 
 import ListaProduto from '../../containers/ListaProduto/index.'
 import Footer from '../../components/Footer'
 import { FundoContainer, Banner } from './styles'
+
+import HeaderPerfil from '../../components/HeaderPerfil'
 const produtos: Produto[] = [
   {
     id: 1,
@@ -55,7 +56,7 @@ const Perfil = () => {
   return (
     <>
       <FundoContainer>
-        <Header />
+        <HeaderPerfil />
         <Banner style={{}}></Banner>
       </FundoContainer>
       <ListaProduto produtos={produtos} />

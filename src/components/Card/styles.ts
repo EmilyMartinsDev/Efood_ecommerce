@@ -15,6 +15,10 @@ export const Tag = styled.span`
   padding: 8px 16px;
   margin-right: 5px;
   border-radius: 8px;
+
+  @media (max-width: 768px) {
+    padding: 4px 8px;
+  }
 `
 export const Image = styled.div`
   position: absolute;

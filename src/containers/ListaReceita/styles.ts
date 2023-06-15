@@ -9,4 +9,12 @@ export const Container = styled.section`
   row-gap: 2rem;
   max-width: 960px;
   margin: 0 auto;
+
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    img {
+      width: 100%;
+    }
+  }
 `

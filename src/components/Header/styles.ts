@@ -13,6 +13,9 @@ export const HeaderContainer = styled.header`
 export const HeaderTitle = styled.h2`
   margin-top: 4rem;
   color: ${cores.rosa};
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `
 
 export const HeaderLogo = styled.span`
