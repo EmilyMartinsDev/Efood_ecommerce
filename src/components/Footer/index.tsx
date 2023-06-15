@@ -1,8 +1,8 @@
 import { HeaderLogo } from '../Header/styles'
 import { FooterContainer, Content } from './styles'
-import rede1 from '../../../public/images/REDE1.png'
-import rede2 from '../../../public/images/REDE2.png'
-import rede3 from '../../../public/images/REDE3.png'
+import rede1 from '../../images/REDE1.png'
+import rede2 from '../../images/REDE2.png'
+import rede3 from '../../images/REDE3.png'
 import Text from '../Text'
 const Footer = () => {
   return (

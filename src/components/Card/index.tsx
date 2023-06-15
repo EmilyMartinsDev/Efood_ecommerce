@@ -8,7 +8,7 @@ import {
   Rating
 } from './styles'
 import Text from '../Text'
-import star from '../../assets/images/icons8-estrela-48.png'
+import star from '../../images/icons8-estrela-48.png'
 type Props = {
   id: number
   name: string
