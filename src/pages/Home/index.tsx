@@ -1,8 +1,8 @@
 import Header from '../../components/Header'
 import ListaReceita from '../../containers/ListaReceita'
 import Restaurante from '../../models/Restaurante'
-import LaDolce from '../../assets/images/laDolce.svg'
-import sushi from '../../assets/images/img.svg'
+import LaDolce from '../../assets/images/laDolce.png'
+import sushi from '../../assets/images/img.png'
 import Footer from '../../components/Footer'
 const restaurantes: Restaurante[] = [
   {
