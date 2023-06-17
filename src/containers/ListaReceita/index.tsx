@@ -1,5 +1,5 @@
 import Card from '../../components/Card'
-import Restaurante from '../../models/Restaurante'
+import { Restaurante } from '../../restaurante/restaurante'
 import { Container } from './styles'
 
 type Props = {
@@ -11,13 +11,15 @@ const ListaReceita = ({ restaurantes }: Props) => {
     <Container>
       {restaurantes.map((r) => (
         <Card
+          capa={r.capa}
           id={r.id}
-          banner={r.banner}
-          description={r.description}
-          name={r.name}
-          infos={r.infos}
-          rating={r.rating}
+          titulo={r.titulo}
+          cardapio={r.cardapio}
+          descricao={r.descricao}
+          tipo={r.titulo}
           key={r.id}
+          avaliacao={r.avaliacao}
+          destacado={r.destacado}
         />
       ))}
     </Container>

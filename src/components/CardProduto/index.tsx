@@ -4,27 +4,26 @@ import Text from '../Text'
 
 type Props = {
   id: number
-  name: string
-  banner: string
-  description: string
+  foto: string
+  preco: number
+  descricao: string
+  nome: string
+  porcao: string
 }
 
-const CardProduto = ({ name, banner, description }: Props) => {
+const CardProduto = ({ id, foto, preco, descricao, porcao, nome }: Props) => {
   return (
-    <div>
-      <Content>
-        <img src={banner} alt="img" />
-        <div>
-          <Title color="rosaClaro" fontSize={18}>
-            {name}
-          </Title>
-          <Text color="rosaClaro" fontSize={14}>
-            {description}
-          </Text>
-        </div>
-        <Button>Adicionar ao carrinho</Button>
-      </Content>
-    </div>
+    <Content>
+      <img src={foto} alt="img" />
+      <div>
+        <Title color="rosaClaro" fontSize={18}>
+          {nome}
+        </Title>
+        <Text color="rosaClaro" fontSize={14}>
+          {descricao}
+        </Text>
+      </div>
+    </Content>
   )
 }
 export default CardProduto

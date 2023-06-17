@@ -12,6 +12,11 @@ export const Content = styled(CardContent)`
   ${Texto} {
     margin-top: 8px;
   }
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 196px;
+  }
 `
 
 export const Button = styled.button`

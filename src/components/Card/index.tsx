@@ -9,42 +9,55 @@ import {
 } from './styles'
 import Text from '../Text'
 import star from '../../images/icons8-estrela-48.png'
+import { Produto } from '../../restaurante/restaurante'
 type Props = {
   id: number
-  name: string
-  banner: string
-  description: string
-  rating?: number
-  infos?: string[]
+  titulo: string
+  capa: string
+  descricao: string
+  tipo: string
+  destacado?: boolean
+  avaliacao?: number
+  cardapio?: Produto[]
 }
 
-const Card = ({ name, banner, description, rating, infos, id }: Props) => {
+const Card = ({
+  id,
+  titulo,
+  capa,
+  descricao,
+  tipo,
+  avaliacao,
+  destacado,
+  cardapio
+}: Props) => {
   return (
     <CardContainer>
-      <img src={banner} alt={name} />
-      {infos && (
-        <Image>
-          {infos.map((i) => (
-            <Tag key={id}>{i}</Tag>
-          ))}
+      <img src={capa} alt={titulo} />
+      {destacado && (
+        <Image className="destacado">
+          <Tag>Destaque</Tag>
         </Image>
       )}
+      <Image>
+        <Tag>{tipo}</Tag>
+      </Image>
       <CardContent>
         <div>
           <Title color="rosa" fontSize={18}>
-            {name}
+            {titulo}
           </Title>
           <Rating>
-            {rating}
+            {avaliacao}
             <span>
               <img src={star} alt="star" />
             </span>
           </Rating>
         </div>
         <Text color="rosa" fontSize={14}>
-          {description}
+          {descricao}
         </Text>
-        <SaibaMais to="/perfil">Saiba mais</SaibaMais>
+        <SaibaMais to={`/perfil/${id}`}>Saiba mais</SaibaMais>
       </CardContent>
     </CardContainer>
   )

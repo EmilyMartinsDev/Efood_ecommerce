@@ -8,6 +8,12 @@ export const CardContainer = styled.div`
   ${Texto} {
     margin: 8px 0;
   }
+  img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    max-height: 240px;
+  }
 `
 export const Tag = styled.span`
   background-color: ${cores.rosa};
@@ -15,7 +21,6 @@ export const Tag = styled.span`
   padding: 8px 16px;
   margin-right: 5px;
   border-radius: 8px;
-
   @media (max-width: 768px) {
     padding: 4px 8px;
   }
@@ -27,6 +32,10 @@ export const Image = styled.div`
   margin-top: 8px;
   img {
     width: 100%;
+  }
+  &.destacado {
+    top: 8px;
+    left: 8px;
   }
 `
 export const Rating = styled.span`
