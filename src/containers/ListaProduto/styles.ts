@@ -68,6 +68,18 @@ export const ModalContent = styled.div`
   max-width: 960px;
   z-index: 1;
   position: relative;
+  @media (max-width: 1024px) {
+  }
+
+  @media (max-width: 768px) {
+    padding: 32px;
+    max-width: 80%;
+    display: block;
+    & > img {
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
   div {
     display: flex;
     flex-direction: column;
