@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom'
 import { HeaderContainer, HeaderLogo } from '../Header/styles'
 import { Container, LinkRestaurante } from './styles'
+import { RootRedux } from '../../store'
+import { open } from '../../store/reducers/carrinho'
+import { useDispatch, useSelector } from 'react-redux'
 const HeaderPerfil = () => {
+  const dispatch = useDispatch()
+  const { items } = useSelector((state: RootRedux) => state.cart)
   return (
     <HeaderContainer>
       <Container>
@@ -11,7 +16,9 @@ const HeaderPerfil = () => {
             <HeaderLogo> efood </HeaderLogo>
           </Link>
         </div>
-        <span>0 itens no carrinho</span>
+        <span onClick={() => dispatch(open())}>
+          {items.length} itens no carrinho
+        </span>
       </Container>
     </HeaderContainer>
   )

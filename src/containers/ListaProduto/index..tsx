@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { add } from '../../store/reducers/carrinho'
 import fechar from '../../images/fechar.png'
 import { Title } from '../../components/Card/styles'
 import CardProduto from '../../components/CardProduto'
@@ -16,6 +18,7 @@ type ModalP = {
   porcao: string
   preco: number
   foto: string
+  id: number
 }
 
 const ListaProduto = ({ produtos }: Props) => {
@@ -27,6 +30,7 @@ const ListaProduto = ({ produtos }: Props) => {
   }
 
   const [modal, setModal] = useState<ModalP>({
+    id: 0,
     descricao: '',
     isVisible: false,
     porcao: '',
@@ -34,9 +38,11 @@ const ListaProduto = ({ produtos }: Props) => {
     preco: 0,
     foto: ''
   })
+  const dispatch = useDispatch()
   if (!produtos) {
     return <h1>Carrgeando</h1>
   }
+
   return (
     <>
       <ContainerProduct>
@@ -53,6 +59,7 @@ const ListaProduto = ({ produtos }: Props) => {
             <Button
               onClick={() =>
                 setModal({
+                  id: p.id,
                   descricao: p.descricao,
                   isVisible: true,
                   nome: p.nome,
@@ -82,14 +89,26 @@ const ListaProduto = ({ produtos }: Props) => {
             <Texto fontSize={18} color="rosaClaro">
               {modal.porcao}
             </Texto>
-            <Button>{`Adicionar ao carinho ${FormataPreco(
-              modal.preco
-            )}`}</Button>
+            <Button
+              onClick={() =>
+                dispatch(
+                  add({
+                    foto: modal.foto,
+                    preco: modal.preco,
+                    id: modal.id,
+                    descricao: modal.descricao,
+                    nome: modal.nome,
+                    porcao: modal.porcao
+                  })
+                )
+              }
+            >{`Adicionar ao carinho ${FormataPreco(modal.preco)}`}</Button>
           </div>
           <div
             className="fechar"
             onClick={() =>
               setModal({
+                id: 0,
                 descricao: '',
                 isVisible: false,
                 nome: '',

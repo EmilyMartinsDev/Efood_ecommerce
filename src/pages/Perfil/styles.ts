@@ -6,6 +6,11 @@ export const FundoContainer = styled.div`
     padding: 2rem;
   }
 `
+export const Encapsulador = styled.div`
+  height: 100%;
+  width: 100%;
+  position: relative;
+`
 export const Banner = styled.div`
   height: 184px;
   width: 100%;
