@@ -20,15 +20,14 @@ type ModalP = {
   foto: string
   id: number
 }
+export const FormataPreco = (preco = 0) => {
+  return Intl.NumberFormat('pt-Br', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(preco)
+}
 
 const ListaProduto = ({ produtos }: Props) => {
-  const FormataPreco = (preco = 0) => {
-    return Intl.NumberFormat('pt-Br', {
-      style: 'currency',
-      currency: 'BRL'
-    }).format(preco)
-  }
-
   const [modal, setModal] = useState<ModalP>({
     id: 0,
     descricao: '',

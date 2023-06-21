@@ -2,7 +2,7 @@ import { cores } from '../../styles'
 import { Texto } from './styles'
 
 export type Props = {
-  children: string
+  children: string | number
   color: 'rosaClaro' | 'rosa'
   fontSize: number
 }

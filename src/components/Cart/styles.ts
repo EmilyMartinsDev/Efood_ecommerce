@@ -32,17 +32,32 @@ export const SideBar = styled.aside`
   z-index: 1;
   max-width: 360px;
   background-color: ${cores.rosa};
+
+  @media (max-width: 768px) {
+    max-width: 80%;
+  }
 `
 export const CartItem = styled.li`
   display: flex;
   padding: 8px;
   background-color: ${cores.rosaClaro};
+  margin-bottom: 8px;
+  @media (max-width: 768px) {
+    display: block;
+  }
+
   img {
     width: 100%;
     height: 80px;
     max-width: 80px;
     object-fit: cover;
     margin-right: 8px;
+    @media (max-width: 768px) {
+      margin-right: 0;
+      margin-bottom: 16px;
+      display: block;
+      max-width: 100%;
+    }
   }
 
   button {
