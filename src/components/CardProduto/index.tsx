@@ -12,6 +12,12 @@ type Props = {
 }
 
 const CardProduto = ({ id, foto, preco, descricao, porcao, nome }: Props) => {
+  const formataDescricao = (descricao: string) => {
+    if (descricao.length > 240) {
+      return descricao.slice(0, 240) + '...'
+    }
+    return descricao
+  }
   return (
     <Content>
       <img src={foto} alt="img" />
@@ -20,7 +26,7 @@ const CardProduto = ({ id, foto, preco, descricao, porcao, nome }: Props) => {
           {nome}
         </Title>
         <Text color="rosaClaro" fontSize={14}>
-          {descricao}
+          {formataDescricao(descricao)}
         </Text>
       </div>
     </Content>

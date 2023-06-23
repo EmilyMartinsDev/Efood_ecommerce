@@ -20,6 +20,12 @@ export const Container = styled.div`
   max-width: 960px;
   align-items: center;
   color: ${cores.rosa};
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   .itemCart {
     cursor: pointer;
     padding: 8px 16px;
@@ -33,7 +39,4 @@ export const Container = styled.div`
 `
 export const LinkRestaurante = styled(Link)`
   color: ${cores.rosa};
-  @media (max-width: 768px) {
-    padding-right: 24px;
-  }
 `

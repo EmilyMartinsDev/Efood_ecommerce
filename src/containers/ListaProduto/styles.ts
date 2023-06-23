@@ -12,7 +12,7 @@ export const ContainerProduct = styled(Container)`
       width: 100%;
     }
   }
-  @media (max-width: 512px) {
+  @media (max-width: 640px) {
     grid-template-columns: 1fr;
   }
 
@@ -72,7 +72,7 @@ export const ModalContent = styled.div`
 
   @media (max-width: 768px) {
     padding: 32px;
-    max-width: 80%;
+    max-width: 85%;
     display: block;
     & > img {
       max-width: 100%;
@@ -87,6 +87,10 @@ export const ModalContent = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  strong {
+    margin-top: 16px;
+    color: ${cores.brancoRosa};
   }
   .fechar {
     position: absolute;

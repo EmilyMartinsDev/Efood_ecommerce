@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { CardContent } from '../Card/styles'
+import { CardContent, Title } from '../Card/styles'
 import { cores } from '../../styles'
 import { Texto } from '../Text/styles'
 
@@ -12,7 +12,8 @@ export const Content = styled(CardContent)`
   & > div {
     display: block;
   }
-  ${Texto} {
+  ${Texto}, ${Title} {
+    text-align: center;
     margin-top: 8px;
   }
   img {

@@ -86,6 +86,7 @@ const ListaProduto = ({ produtos }: Props) => {
             <Texto fontSize={18} color="rosaClaro">
               {modal.descricao}
             </Texto>
+            <strong>Serve:</strong>
             <Texto fontSize={18} color="rosaClaro">
               {modal.porcao}
             </Texto>
@@ -103,7 +104,7 @@ const ListaProduto = ({ produtos }: Props) => {
                     })
                   )
                   toast.success('produto adicionado com sucesso')
-                } catch (e) {
+                } catch {
                   toast.error('erro ao adicionar ao carrinho')
                 }
               }}
