@@ -8,7 +8,6 @@ export const Content = styled(CardContent)`
   max-width: 320px;
   width: 100%;
   height: 360px;
-
   padding: 0;
   & > div {
     display: block;
@@ -20,7 +19,7 @@ export const Content = styled(CardContent)`
     display: block;
     max-width: 304px;
     width: 100%;
-    margin-top: auto;
+    margin: 0 auto;
     object-fit: cover;
     max-height: 168px;
     height: 100%;

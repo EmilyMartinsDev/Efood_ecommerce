@@ -45,5 +45,17 @@ export const Banner = styled.div`
       font-size: 32px;
       font-style: italic;
     }
-  }
+    @media (max-width: 1024px) {
+      max-width: 80%;
+
+      span, h2 {
+        font-size: 24px;
+      }
+
+    }
+    @media (max-width: 768px) {
+      h2, span  {
+        font-size: 16px;
+      }
+    }
 `

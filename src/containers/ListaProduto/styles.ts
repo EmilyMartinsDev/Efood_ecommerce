@@ -20,6 +20,7 @@ export const ContainerProduct = styled(Container)`
     background-color: ${cores.rosa};
     padding: 8px;
     display: flex;
+    align-items: center;
     flex-direction: column;
     justify-content: end;
     ${Button} {

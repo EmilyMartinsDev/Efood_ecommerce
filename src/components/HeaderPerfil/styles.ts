@@ -33,4 +33,7 @@ export const Container = styled.div`
 `
 export const LinkRestaurante = styled(Link)`
   color: ${cores.rosa};
+  @media (max-width: 768px) {
+    padding-right: 24px;
+  }
 `
