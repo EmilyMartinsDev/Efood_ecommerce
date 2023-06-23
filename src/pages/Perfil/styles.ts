@@ -15,7 +15,7 @@ export const Encapsulador = styled.div`
 export const Banner = styled.div`
   height: 280px;
   color: ${cores.branco};
-  background-size: cover;
+  background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;

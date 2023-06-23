@@ -18,7 +18,7 @@ const Perfil = () => {
     <Encapsulador>
       <FundoContainer>
         <HeaderPerfil />
-        <Banner style={{ backgroundImage: `url(${restaurante.capa})` }}>
+        <Banner style={{ backgroundImage: `url(${produtos[0].foto})` }}>
           <div className="title">
             <span>{restaurante.tipo}</span>
             <h2>{restaurante.titulo}</h2>
