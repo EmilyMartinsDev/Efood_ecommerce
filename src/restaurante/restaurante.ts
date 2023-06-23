@@ -9,6 +9,7 @@ export type Produto = {
 
 export type Restaurante = {
   id: number
+  tipo: string
   titulo: string
   destacado: boolean
   avaliacao: number

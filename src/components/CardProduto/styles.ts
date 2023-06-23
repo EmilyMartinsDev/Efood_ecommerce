@@ -5,7 +5,11 @@ import { Texto } from '../Text/styles'
 
 export const Content = styled(CardContent)`
   background-color: ${cores.rosa};
+  max-width: 320px;
+  width: 100%;
+  height: 360px;
 
+  padding: 0;
   & > div {
     display: block;
   }
@@ -13,9 +17,13 @@ export const Content = styled(CardContent)`
     margin-top: 8px;
   }
   img {
+    display: block;
+    max-width: 304px;
     width: 100%;
+    margin-top: auto;
     object-fit: cover;
-    height: 196px;
+    max-height: 168px;
+    height: 100%;
   }
 `
 

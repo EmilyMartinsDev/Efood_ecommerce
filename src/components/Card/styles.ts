@@ -56,6 +56,7 @@ export const CardContent = styled.div`
   & > div {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 `
 export const Title = styled(Texto)`

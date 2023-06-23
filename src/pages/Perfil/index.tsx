@@ -6,6 +6,7 @@ import HeaderPerfil from '../../components/HeaderPerfil'
 import { useParams } from 'react-router-dom'
 import Cart from '../../components/Cart'
 import { useGetProdutosQuery } from '../../services/api'
+
 const Perfil = () => {
   const { id } = useParams()
   const { data: restaurante } = useGetProdutosQuery(id!)
@@ -17,7 +18,12 @@ const Perfil = () => {
     <Encapsulador>
       <FundoContainer>
         <HeaderPerfil />
-        <Banner style={{}}></Banner>
+        <Banner style={{ backgroundImage: `url(${restaurante.capa})` }}>
+          <div className="title">
+            <span>{restaurante.tipo}</span>
+            <h2>{restaurante.titulo}</h2>
+          </div>
+        </Banner>
       </FundoContainer>
       <ListaProduto produtos={produtos} />
       <Footer />

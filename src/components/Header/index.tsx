@@ -4,9 +4,8 @@ import { HeaderContainer, HeaderLogo, HeaderTitle } from './styles'
 const Header = () => {
   return (
     <HeaderContainer>
-      <div>
+      <div className="Hero">
         <Link to="/">
-          {' '}
           <HeaderLogo>efood </HeaderLogo>
         </Link>
         <HeaderTitle>

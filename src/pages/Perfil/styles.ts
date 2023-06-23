@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { HeaderContainer } from '../../components/Header/styles'
 import fundo from '../../images/fundo_perfil.png'
+import { cores } from '../../styles'
 export const FundoContainer = styled.div`
   ${HeaderContainer} {
     padding: 2rem;
@@ -12,14 +13,14 @@ export const Encapsulador = styled.div`
   position: relative;
 `
 export const Banner = styled.div`
-  height: 184px;
-  width: 100%;
+  height: 280px;
+  color: ${cores.branco};
   background-size: cover;
-  background-image: url(${fundo});
+  background-position: center;
   background-repeat: no-repeat;
   position: relative;
   &::before {
-    content: "";
+    content: '';
     background-color: #000;
     position: absolute;
     opacity: 0.5;
@@ -27,4 +28,22 @@ export const Banner = styled.div`
     top: 0;
     width: 100%;
     height: 100%;
+  }
+  .title {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    height: 100%;
+    padding: 16px 0;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    text-transform: uppercase;
+    line-height: 150%;
+    span {
+      font-size: 32px;
+      font-style: italic;
+    }
+  }
 `

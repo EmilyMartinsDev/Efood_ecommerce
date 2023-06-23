@@ -1,14 +1,20 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
-
+import hero from '../../images/fundo.png'
 export const HeaderContainer = styled.header`
-  background-color: ${cores.rosaClaro};
-  widht: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 1rem;
+
+  .Hero {
+    padding: 16px;
+    height: 100%;
+    width: 100%;
+    background-image: url(${hero});
+    background-size: cover;
+  }
 `
 export const HeaderTitle = styled.h2`
   margin-top: 4rem;

@@ -68,8 +68,6 @@ export const ModalContent = styled.div`
   max-width: 960px;
   z-index: 1;
   position: relative;
-  @media (max-width: 1024px) {
-  }
 
   @media (max-width: 768px) {
     padding: 32px;
@@ -79,6 +77,10 @@ export const ModalContent = styled.div`
       max-width: 100%;
       object-fit: cover;
     }
+  }
+
+  img {
+    object-fit: cover;
   }
   div {
     display: flex;
@@ -92,8 +94,5 @@ export const ModalContent = styled.div`
     padding: 32px;
     cursor: pointer;
     max-width: 120px;
-    img {
-      object-fit: cover;
-    }
   }
 `
