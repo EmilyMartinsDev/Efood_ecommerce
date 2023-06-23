@@ -1,13 +1,21 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { cores } from '../../styles'
+import { HeaderContainer } from '../Header/styles'
+
+export const HeaderContainerPerfil = styled(HeaderContainer)`
+  padding: 0;
+  height: 186px;
+  margin: 0;
+`
 
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-weight: bold;
   width: 100%;
-  padding: 32px;
+  height: 100%;
   margin: 0 auto;
   max-width: 960px;
   align-items: center;

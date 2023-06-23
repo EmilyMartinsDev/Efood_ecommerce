@@ -4,7 +4,7 @@ import fundo from '../../images/fundo_perfil.png'
 import { cores } from '../../styles'
 export const FundoContainer = styled.div`
   ${HeaderContainer} {
-    padding: 2rem;
+    padding: 0;
   }
 `
 export const Encapsulador = styled.div`

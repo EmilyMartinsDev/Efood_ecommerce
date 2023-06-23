@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom'
-import { HeaderContainer, HeaderLogo } from '../Header/styles'
-import { Container, LinkRestaurante } from './styles'
+import { HeaderLogo } from '../Header/styles'
+import { Container, LinkRestaurante, HeaderContainerPerfil } from './styles'
 import { RootRedux } from '../../store'
 import { open } from '../../store/reducers/carrinho'
 import { useDispatch, useSelector } from 'react-redux'
 
 const HeaderPerfil = () => {
   const dispatch = useDispatch()
-  const { items } = useSelector((state: RootRedux) => state.cart)
+  const items = useSelector((state: RootRedux) => state.cart.items)
   return (
-    <HeaderContainer>
+    <HeaderContainerPerfil>
       <div className="Hero">
         <Container>
           <LinkRestaurante to="/">Restaurantes</LinkRestaurante>
@@ -23,7 +23,7 @@ const HeaderPerfil = () => {
           </span>
         </Container>
       </div>
-    </HeaderContainer>
+    </HeaderContainerPerfil>
   )
 }
 export default HeaderPerfil

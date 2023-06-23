@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { toast } from 'react-toastify'
 import { add } from '../../store/reducers/carrinho'
 import fechar from '../../images/fechar.png'
 import { Title } from '../../components/Card/styles'
@@ -89,18 +90,23 @@ const ListaProduto = ({ produtos }: Props) => {
               {modal.porcao}
             </Texto>
             <Button
-              onClick={() =>
-                dispatch(
-                  add({
-                    foto: modal.foto,
-                    preco: modal.preco,
-                    id: modal.id,
-                    descricao: modal.descricao,
-                    nome: modal.nome,
-                    porcao: modal.porcao
-                  })
-                )
-              }
+              onClick={() => {
+                try {
+                  dispatch(
+                    add({
+                      foto: modal.foto,
+                      preco: modal.preco,
+                      id: modal.id,
+                      descricao: modal.descricao,
+                      nome: modal.nome,
+                      porcao: modal.porcao
+                    })
+                  )
+                  toast.success('produto adicionado com sucesso')
+                } catch (e) {
+                  toast.error('erro ao adicionar ao carrinho')
+                }
+              }}
             >{`Adicionar ao carinho ${FormataPreco(modal.preco)}`}</Button>
           </div>
           <div
