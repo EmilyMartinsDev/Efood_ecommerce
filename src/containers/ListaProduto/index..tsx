@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
 import { add } from '../../store/reducers/carrinho'
 import fechar from '../../images/fechar.png'
@@ -9,6 +9,7 @@ import { Button } from '../../components/CardProduto/styles'
 import { Texto } from '../../components/Text/styles'
 import { Produto } from '../../restaurante/restaurante'
 import { ContainerProduct, Modal, ModalContent } from './styles'
+import { RootRedux } from '../../store'
 type Props = {
   produtos: Produto[]
 }
@@ -39,6 +40,7 @@ const ListaProduto = ({ produtos }: Props) => {
     foto: ''
   })
   const dispatch = useDispatch()
+  const items = useSelector((state: RootRedux) => state.cart.items)
   if (!produtos) {
     return <h1>Carrgeando</h1>
   }
@@ -103,7 +105,11 @@ const ListaProduto = ({ produtos }: Props) => {
                       porcao: modal.porcao
                     })
                   )
-                  toast.success('produto adicionado com sucesso')
+                  if (items.find((i) => i.id === modal.id)) {
+                    toast.warning('esse item ja foi adicionado no carrinho')
+                  } else {
+                    toast.success('produto adicionado com sucesso')
+                  }
                 } catch {
                   toast.error('erro ao adicionar ao carrinho')
                 }
