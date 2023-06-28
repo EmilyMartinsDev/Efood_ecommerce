@@ -128,7 +128,6 @@ export const InputGroup = styled.div<widthInput>`
     background-color: ${cores.rosaClaro};
     border: none;
     padding: 0 8px;
-
     &.error {
       border: 2px solid yellow;
     }
@@ -142,6 +141,11 @@ export const InputGroup = styled.div<widthInput>`
   &.flexInput {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    align-items: end;
+    gap: 5%;
+    @media (max-width: 678px) {
+      display: grid;
+      grid-template-columns: 50% 45%;
+    }
   }
 `
