@@ -49,11 +49,7 @@ export const SideBar = styled.aside`
   }
   &.success {
     display: block;
-    h3 {
-      margin-top: 8px;
-      color: ${cores.rosaClaro};
-      font-size: 16px;
-    }
+
     p {
       line-height: 22px;
       font-size: 14px;
@@ -65,7 +61,11 @@ export const SideBar = styled.aside`
     color: ${cores.brancoRosa};
     font-weight: bold;
   }
-
+  h3 {
+    margin: 8px 0;
+    color: ${cores.rosaClaro};
+    font-size: 16px;
+  }
   @media (max-width: 768px) {
     max-width: 80%;
   }

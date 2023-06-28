@@ -41,6 +41,7 @@ const Cart = () => {
   const [handleAddress, setHandleAddress] = useState(false)
   const [handleCard, setHandleCard] = useState(false)
   const [sucesso, setSucesso] = useState(false)
+
   const form = useFormik({
     initialValues: {
       receiver: '',
@@ -291,6 +292,7 @@ const Cart = () => {
       </SideBar>
 
       <SideBar className={handleCard ? 'handleCard' : ''}>
+        <h3>Pagamento: valor a pagar: {FormataPreco(precoTotal())} </h3>
         <form onSubmit={form.handleSubmit}>
           <InputGroup>
             <label htmlFor="cardName">Nome no cartão</label>
