@@ -25,7 +25,11 @@ export const CardContainer = styled.div`
   top: 0;
   left: 0;
   position: absolute;
-
+  .imgProduto {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+  }
   &.open {
     display: flex;
   }
@@ -46,18 +50,26 @@ export const SideBar = styled.aside`
   }
   &.handleCard {
     display: block;
+
+    h3 {
+      margin-bottom: 16px;
+    }
   }
   &.success {
     display: block;
 
-    p {
+    div {
       line-height: 22px;
       font-size: 14px;
       color: ${cores.brancoRosa};
       margin: 16px 0;
+      p {
+        margin-bottom: 16px;
+      }
     }
   }
-  p.semItem {
+  p.semItem,
+  p.warningText {
     color: ${cores.brancoRosa};
     font-weight: bold;
   }
@@ -65,6 +77,11 @@ export const SideBar = styled.aside`
     margin: 8px 0;
     color: ${cores.rosaClaro};
     font-size: 16px;
+  }
+  p.warningText {
+    color: yellow;
+
+    margin: 16px 0;
   }
   @media (max-width: 768px) {
     max-width: 80%;
@@ -75,6 +92,10 @@ export const CartItem = styled.li`
   padding: 8px;
   background-color: ${cores.rosaClaro};
   margin-bottom: 8px;
+  width: 100%;
+  max-width: 344px;
+  height: 96px;
+  position: relative;
   @media (max-width: 768px) {
     display: block;
   }
@@ -96,8 +117,11 @@ export const CartItem = styled.li`
   button {
     background-image: url(${lixeira});
     width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
     cursor: pointer;
-    margin-left: auto;
     height: 16px;
     object-fit: cover;
     border: none;
@@ -114,7 +138,6 @@ export const InfoCart = styled.div`
   ${Button} {
     display: block;
     margin: 8px auto;
-    width: 95%;
   }
 `
 export const InputGroup = styled.div<widthInput>`
@@ -142,7 +165,7 @@ export const InputGroup = styled.div<widthInput>`
     display: flex;
     flex-direction: row;
     align-items: end;
-    gap: 5%;
+    gap: 6%;
     @media (max-width: 678px) {
       display: grid;
       grid-template-columns: 50% 45%;

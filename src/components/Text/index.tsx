@@ -3,7 +3,7 @@ import { Texto } from './styles'
 
 export type Props = {
   children: string | number
-  color: 'rosaClaro' | 'rosa'
+  color: 'rosaClaro' | 'rosa' | 'brancoRosa'
   fontSize: number
 }
 

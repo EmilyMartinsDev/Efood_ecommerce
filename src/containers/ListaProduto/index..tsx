@@ -80,18 +80,16 @@ const ListaProduto = ({ produtos }: Props) => {
         <div className="overlay"></div>
 
         <ModalContent>
-          <img src={modal.foto} alt={modal.nome} />
+          <img className="imageProduct" src={modal.foto} alt={modal.nome} />
           <div>
-            <Title fontSize={18} color="rosaClaro">
+            <Title fontSize={18} color="brancoRosa">
               {modal.nome}
             </Title>
-            <Texto fontSize={18} color="rosaClaro">
+            <Texto fontSize={14} color="brancoRosa">
               {modal.descricao}
             </Texto>
-            <strong>Serve:</strong>
-            <Texto fontSize={18} color="rosaClaro">
-              {modal.porcao}
-            </Texto>
+            <span>Serve: {modal.porcao}</span>
+
             <Button
               onClick={() => {
                 try {

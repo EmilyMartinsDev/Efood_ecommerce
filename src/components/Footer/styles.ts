@@ -3,16 +3,17 @@ import { cores } from '../../styles'
 import { Texto } from '../Text/styles'
 
 export const FooterContainer = styled.footer`
-  height: 192px;
+  height: 298px;
   background-color: ${cores.rosaClaro};
-  padding: 32px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
 
   ${Texto} {
-    margin-top: 2rem;
+    margin-top: 1rem;
+    max-width: 480px;
+    text-align: center;
   }
 `
 export const Content = styled.div`

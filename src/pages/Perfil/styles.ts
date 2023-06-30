@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { HeaderContainer } from '../../components/Header/styles'
-import fundo from '../../images/fundo_perfil.png'
 import { cores } from '../../styles'
 export const FundoContainer = styled.div`
   ${HeaderContainer} {
@@ -35,22 +34,26 @@ export const Banner = styled.div`
     margin: 0 auto;
     display: flex;
     height: 100%;
-    padding: 16px 0;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    text-transform: uppercase;
     line-height: 150%;
-    span {
+    p {
+      margin-top: 32px;
       font-size: 32px;
-      font-style: italic;
+      font-weight: 100;
+    }  h2 {
+      margin-bottom: 32px;
+      line-height: 40px;
+      font-size: 32px;
     }
     @media (max-width: 1024px) {
       max-width: 80%;
+      h2,p {
 
-      span, h2 {
         font-size: 24px;
       }
+
 
     }
     @media (max-width: 768px) {

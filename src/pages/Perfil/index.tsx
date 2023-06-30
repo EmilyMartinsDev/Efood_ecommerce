@@ -23,7 +23,7 @@ const Perfil = () => {
         <HeaderPerfil />
         <Banner style={{ backgroundImage: `url(${produtos[0].foto})` }}>
           <div className="title">
-            <span>{restaurante.tipo}</span>
+            <p>{restaurante.tipo}</p>
             <h2>{restaurante.titulo}</h2>
           </div>
         </Banner>

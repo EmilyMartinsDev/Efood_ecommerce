@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
-import { HeaderContainer, HeaderLogo, HeaderTitle } from './styles'
-
+import { HeaderContainer, HeaderTitle } from './styles'
+import logo from '../../images/logo.png'
 const Header = () => {
   return (
     <HeaderContainer>
       <div className="Hero">
         <Link to="/">
-          <HeaderLogo>efood </HeaderLogo>
+          <img src={logo} alt="efood" />
         </Link>
         <HeaderTitle>
           Viva experiências gastronômicas

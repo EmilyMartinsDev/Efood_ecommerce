@@ -7,6 +7,7 @@ export const CardContainer = styled.div`
   position: relative;
   ${Texto} {
     margin: 8px 0;
+    line-height: 22px;
   }
   img {
     width: 100%;
@@ -14,13 +15,18 @@ export const CardContainer = styled.div`
     object-fit: cover;
     max-height: 240px;
   }
+
+  width: 100%;
+  max-width: 472px;
 `
 export const Tag = styled.span`
   background-color: ${cores.rosa};
-  color: ${cores.branco};
-  padding: 8px 16px;
+  color: ${cores.rosaClaro};
+  width: 61px;
+  height: 26px;
+  font-size: 14px;
+  padding: 4px;
   margin-right: 5px;
-  border-radius: 8px;
   @media (max-width: 768px) {
     padding: 4px 8px;
   }
@@ -30,12 +36,10 @@ export const Image = styled.div`
   top: 8px;
   right: 8px;
   margin-top: 8px;
-  img {
-    width: 100%;
-  }
+
   &.destacado {
     top: 8px;
-    left: 8px;
+    right: 72px;
   }
 `
 export const Rating = styled.span`
@@ -51,8 +55,9 @@ export const Rating = styled.span`
 `
 export const CardContent = styled.div`
   background-color: ${cores.branco};
-  padding: 1rem;
-
+  padding: 8px;
+  border: 1px solid ${cores.rosa};
+  border-top: 0;
   & > div {
     display: flex;
     justify-content: space-between;
@@ -66,8 +71,16 @@ export const Title = styled(Texto)`
 
 export const SaibaMais = styled(Link)`
   margin-top: 8px;
-  display: inline-block;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
   background-color: ${cores.rosa};
-  color: ${cores.branco};
-  padding: 8px;
+  color: ${cores.rosaClaro};
+  display: flex;
+  width: 100%;
+  max-width: 82px;
+  height: 24px;
+  padding: 8px 0;
+  justify-content: center;
+  align-items: center;
 `

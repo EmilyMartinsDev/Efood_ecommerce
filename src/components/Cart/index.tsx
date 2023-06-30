@@ -4,6 +4,7 @@ import Text from '../Text'
 import { FormataPreco } from '../../containers/ListaProduto/index.'
 import { useDispatch, useSelector } from 'react-redux/es/exports'
 import InputMask from 'react-input-mask'
+import { toast } from 'react-toastify'
 import { close, remove } from '../../store/reducers/carrinho'
 import {
   CardContainer,
@@ -148,7 +149,11 @@ const Cart = () => {
               {items.map((i) => (
                 <CartItem key={i.id}>
                   <div>
-                    <img src={i.foto} alt="img_produto" />
+                    <img
+                      className="imgProduto"
+                      src={i.foto}
+                      alt="img_produto"
+                    />
                   </div>
 
                   <InputGroup>
@@ -229,7 +234,7 @@ const Cart = () => {
             />
           </InputGroup>
           <InputGroup className="flexInput">
-            <InputGroup maxWidth="155px">
+            <InputGroup maxWidth="150px">
               <label htmlFor="zipCode">CEP</label>
               <InputMask
                 mask="99999-999"
@@ -267,17 +272,21 @@ const Cart = () => {
               className={campoIncorreto('complement') ? 'error' : ''}
             />
           </InputGroup>
-
-          <Button
-            type="button"
-            disabled={verificaCamposEndereco()}
-            onClick={() => {
-              setHandleAddress(false)
-              setHandleCard(true)
-            }}
-          >
-            Continuar com o pagamento
-          </Button>
+          {!verificaCamposEndereco() ? (
+            <Button
+              type="button"
+              onClick={() => {
+                setHandleAddress(false)
+                setHandleCard(true)
+              }}
+            >
+              Continuar com o pagamento
+            </Button>
+          ) : (
+            <p className="warningText">
+              Preencha os todos os campos para prosseguir!
+            </p>
+          )}
 
           <Button
             type="button"
@@ -292,7 +301,7 @@ const Cart = () => {
       </SideBar>
 
       <SideBar className={handleCard ? 'handleCard' : ''}>
-        <h3>Pagamento: valor a pagar: {FormataPreco(precoTotal())} </h3>
+        <h3>Pagamento- valor a pagar: {FormataPreco(precoTotal())} </h3>
         <form onSubmit={form.handleSubmit}>
           <InputGroup>
             <label htmlFor="cardName">Nome no cartão</label>
@@ -363,16 +372,22 @@ const Cart = () => {
             </InputGroup>
           </InputGroup>
 
-          <Button
-            type="submit"
-            disabled={verificaCamposCard()}
-            onClick={() => {
-              setHandleCard(false)
-              setSucesso(true)
-            }}
-          >
-            Finalizar
-          </Button>
+          {!verificaCamposCard() ? (
+            <Button
+              type="submit"
+              disabled={verificaCamposCard()}
+              onClick={() => {
+                setHandleCard(false)
+                setSucesso(true)
+              }}
+            >
+              Finalizar
+            </Button>
+          ) : (
+            <p className="warningText">
+              Preencha os todos os campos para prosseguir!
+            </p>
+          )}
           <Button
             type="button"
             onClick={() => {
@@ -387,15 +402,23 @@ const Cart = () => {
       {isSuccess && (
         <SideBar className={sucesso ? 'success' : ''}>
           <h3>Ordem do pedido- {data?.orderId}</h3>
-          <p>
-            Estamos felizes em informar que seu pedido já está em processo de
-            preparação e, em breve, será entregue no endereço fornecido.
-            Gostaríamos de ressaltar que nossos entregadores não estão
-            autorizados a realizar cobranças extras. Lembre-se da importância de
-            higienizar as mãos após o recebimento do pedido, garantindo assim
-            sua segurança e bem-estar durante a refeição. Esperamos que desfrute
-            de uma deliciosa e agradável experiência gastronômica. Bom apetite!
-          </p>
+          <div>
+            <p>
+              Estamos felizes em informar que seu pedido já está em processo de
+              preparação e, em breve, será entregue no endereço fornecido.
+            </p>
+            <p>
+              Gostaríamos de ressaltar que nossos entregadores não estão
+              autorizados a realizar cobranças extras.
+            </p>
+            <p>
+              Lembre-se da importância de higienizar as mãos após o recebimento
+              do pedido, garantindo assim sua segurança e bem-estar durante a
+              refeição.
+            </p>
+            Esperamos que desfrute de uma deliciosa e agradável experiência
+            gastronômica. Bom apetite!
+          </div>
           <Button
             type="button"
             onClick={() => {

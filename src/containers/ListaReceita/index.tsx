@@ -16,7 +16,7 @@ const ListaReceita = ({ restaurantes }: Props) => {
           titulo={r.titulo}
           cardapio={r.cardapio}
           descricao={r.descricao}
-          tipo={r.titulo}
+          tipo={r.tipo}
           key={r.id}
           avaliacao={r.avaliacao}
           destacado={r.destacado}

@@ -1,4 +1,4 @@
-import { HeaderLogo } from '../Header/styles'
+import logo from '../../images/logo.png'
 import { FooterContainer, Content } from './styles'
 import rede1 from '../../images/REDE1.png'
 import rede2 from '../../images/REDE2.png'
@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <FooterContainer>
       <div>
-        <HeaderLogo>efood</HeaderLogo>
+        <img src={logo} alt="efood_brand" />
         <Content>
           <a href="#">
             <img src={rede1} alt="redes sociais" />

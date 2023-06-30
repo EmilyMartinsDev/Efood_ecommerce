@@ -34,14 +34,16 @@ const Card = ({
   return (
     <CardContainer>
       <img src={capa} alt={titulo} />
-      {destacado && (
-        <Image className="destacado">
-          <Tag>Destaque</Tag>
+      <div className="infos">
+        <Image>
+          <Tag>{tipo}</Tag>
         </Image>
-      )}
-      <Image>
-        <Tag>{tipo}</Tag>
-      </Image>
+        {destacado && (
+          <Image className="destacado">
+            <Tag>Destaque da semana</Tag>
+          </Image>
+        )}
+      </div>
       <CardContent>
         <div>
           <Title color="rosa" fontSize={18}>

@@ -18,16 +18,11 @@ export const ContainerProduct = styled(Container)`
 
   .produto {
     background-color: ${cores.rosa};
-    padding: 8px;
+    padding: 6px;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: end;
-    ${Button} {
-      display: block;
-      margin: 0 auto;
-      max-width: 80%;
-    }
   }
 `
 export const Modal = styled.div`
@@ -45,9 +40,11 @@ export const Modal = styled.div`
   &.visible {
     display: block;
   }
-  img {
+  .imageProduct {
     width: 100%;
-    max-width: 320px;
+    height: 280px;
+    object-fit: cover;
+    max-width: 280px;
   }
   .overlay {
     position: absolute;
@@ -60,16 +57,23 @@ export const Modal = styled.div`
 `
 export const ModalContent = styled.div`
   display: grid;
-  padding: 48px;
+  padding: 32px;
   grid-template-column: 1fr 2fr;
   gap: 5%;
   background-color: ${cores.rosa};
   display: flex;
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1024px;
+  height: 344px;
   z-index: 1;
   position: relative;
-
+  ${Button} {
+    width: 100%;
+    max-width: 218px;
+  }
+  ${Texto} {
+    line-height: 22px;
+  }
   @media (max-width: 768px) {
     padding: 32px;
     max-width: 85%;
@@ -86,10 +90,9 @@ export const ModalContent = styled.div`
   div {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
   }
-  strong {
-    margin-top: 16px;
+  span {
+    margin: 16px 0;
     color: ${cores.brancoRosa};
   }
   .fechar {

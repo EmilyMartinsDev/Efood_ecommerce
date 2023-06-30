@@ -7,13 +7,13 @@ export const Content = styled(CardContent)`
   background-color: ${cores.rosa};
   max-width: 320px;
   width: 100%;
-  height: 360px;
+  height: 336px;
   padding: 0;
   & > div {
     display: block;
   }
   ${Texto}, ${Title} {
-    text-align: center;
+    text-align: start;
     margin-top: 8px;
   }
   img {
@@ -34,6 +34,9 @@ export const Button = styled.button`
   background-color: ${cores.rosaClaro};
   font-weight: bold;
   border: 0;
-  padding: 8px;
+  display: flex;
+  align-items: center;
+  height: 24px;
+  justify-content: center;
   cursor: pointer;
 `

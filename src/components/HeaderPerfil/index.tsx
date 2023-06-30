@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import { HeaderLogo } from '../Header/styles'
+import { useDispatch, useSelector } from 'react-redux'
 import { Container, LinkRestaurante, HeaderContainerPerfil } from './styles'
 import { RootRedux } from '../../store'
 import { open } from '../../store/reducers/carrinho'
-import { useDispatch, useSelector } from 'react-redux'
+import logo from '../../images/logo.png'
 
 const HeaderPerfil = () => {
   const dispatch = useDispatch()
@@ -15,7 +15,7 @@ const HeaderPerfil = () => {
           <LinkRestaurante to="/">Restaurantes</LinkRestaurante>
           <div>
             <Link to="/">
-              <HeaderLogo> efood </HeaderLogo>
+              <img src={logo} alt="logo" />
             </Link>
           </div>
           <span className="itemCart" onClick={() => dispatch(open())}>
