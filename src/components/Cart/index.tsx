@@ -194,9 +194,7 @@ const Cart = () => {
 
       <SideBar className={handleAddress ? 'handleAddress' : ''}>
         <form onSubmit={form.handleSubmit}>
-          <Title color="rosaClaro" fontSize={16}>
-            Entrega
-          </Title>
+          <Title fontSize={16}>Entrega</Title>
           <InputGroup>
             <label htmlFor="receiver">Quem irá receber</label>
             <input

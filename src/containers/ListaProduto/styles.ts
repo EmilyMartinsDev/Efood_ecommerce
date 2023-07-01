@@ -75,7 +75,7 @@ export const ModalContent = styled.div`
     line-height: 22px;
   }
   @media (max-width: 768px) {
-    padding: 32px;
+    height: 100%;
     max-width: 85%;
     display: block;
     & > img {

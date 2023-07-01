@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { cores } from '../../styles'
 import { Button } from '../CardProduto/styles'
 import lixeira from '../../images/reciclagem.png'
+import { Title } from '../Card/styles'
 
 type widthInput = {
   maxWidth?: string
@@ -47,6 +48,9 @@ export const SideBar = styled.aside`
   }
   &.handleAddress {
     display: block;
+    ${Title} {
+      color: #ffebd9;
+    }
   }
   &.handleCard {
     display: block;
@@ -87,59 +91,6 @@ export const SideBar = styled.aside`
     max-width: 80%;
   }
 `
-export const CartItem = styled.li`
-  display: flex;
-  padding: 8px;
-  background-color: ${cores.rosaClaro};
-  margin-bottom: 8px;
-  width: 100%;
-  max-width: 344px;
-  height: 96px;
-  position: relative;
-  @media (max-width: 768px) {
-    display: block;
-  }
-
-  img {
-    width: 100%;
-    height: 80px;
-    max-width: 80px;
-    object-fit: cover;
-    margin-right: 8px;
-    @media (max-width: 768px) {
-      margin-right: 0;
-      margin-bottom: 16px;
-      display: block;
-      max-width: 100%;
-    }
-  }
-
-  button {
-    background-image: url(${lixeira});
-    width: 16px;
-    height: 16px;
-    position: absolute;
-    right: 8px;
-    bottom: 8px;
-    cursor: pointer;
-    height: 16px;
-    object-fit: cover;
-    border: none;
-  }
-`
-export const InfoCart = styled.div`
-  margin-top: 16px;
-
-  span {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  ${Button} {
-    display: block;
-    margin: 8px auto;
-  }
-`
 export const InputGroup = styled.div<widthInput>`
   display: flex;
   width: 100%;
@@ -170,5 +121,60 @@ export const InputGroup = styled.div<widthInput>`
       display: grid;
       grid-template-columns: 50% 45%;
     }
+  }
+`
+
+export const CartItem = styled.li`
+  display: flex;
+  padding: 8px;
+  background-color: ${cores.rosaClaro};
+  margin-bottom: 8px;
+  width: 100%;
+  max-width: 344px;
+  height: 96px;
+  position: relative;
+  @media (max-width: 768px) {
+    ${InputGroup} {
+      margin-left: 8px;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 80px;
+    max-width: 80px;
+    object-fit: cover;
+    margin-right: 8px;
+    @media (max-width: 768px) {
+      margin-bottom: 16px;
+      display: block;
+      max-width: 100%;
+    }
+  }
+
+  button {
+    background-image: url(${lixeira});
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    cursor: pointer;
+    height: 16px;
+    object-fit: cover;
+    border: none;
+  }
+`
+export const InfoCart = styled.div`
+  margin-top: 16px;
+
+  span {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ${Button} {
+    display: block;
+    margin: 8px auto;
   }
 `

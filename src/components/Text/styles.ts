@@ -6,7 +6,9 @@ export const Texto = styled.p<Props>`
   color: ${(props) =>
     props.color === 'rosa'
       ? cores.rosa
-      : props.className === 'rosaClaro'
+      : props.color === 'rosaClaro'
       ? cores.rosaClaro
-      : cores.branco};
+      : cores.branco
+      ? cores.branco
+      : ''};
 `
