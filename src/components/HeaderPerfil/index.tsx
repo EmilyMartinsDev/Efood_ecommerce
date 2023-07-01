@@ -19,7 +19,7 @@ const HeaderPerfil = () => {
             </Link>
           </div>
           <span className="itemCart" onClick={() => dispatch(open())}>
-            {items.length} itens no carrinho
+            {items.length} produto(s) no carrinho
           </span>
         </Container>
       </div>
